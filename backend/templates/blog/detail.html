@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>{{ blog.title }}</title>
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-12 text-center">
+            <!-- Title in Green and Bold -->
+            <h1 class="display-4" style="color: green; font-weight: 600;">{{ blog.title }}</h1>
+            <small class="text-muted" style="color: #6c757d;">Publish Date: {{ blog.created_at.strftime('%Y-%m-%d') }}</small>
+        </div>
+
+        <!-- Content in a Box -->
+        <div class="col-12">
+            <div style="border: 2px solid #cccccc; padding: 20px; border-radius: 8px; background-color: #f9f9f9;">
+                <p class="my-4" style="color: #555555;">{{ blog.content }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
